@@ -26,3 +26,24 @@ Array extends Object
 
 ---
 - ` any ` → omija reguły (nieczysta teoria)
+
+
+---
+
+# Unia `A | B` = suma zbiorów
+
+- `A | B` = wartości z A **lub** B
+- `Owoce = Jabłko | Gruszka `
+- `A | A = A`
+- `A | never = A`
+
+```ts
+type Fruit = "apple" | "pear";
+```
+
+
+# Unia – intuicja zbiorowa
+
+- `Jabłko | Owoce = Owoce`
+- `Jabłko | Jabłko | Gruszka = Jabłko | Gruszka`
+- Unia **poszerza zbiór**
