@@ -1,4 +1,5 @@
 import express from "express";
+import { users } from "./users/users";
 
 const app = express();
 
@@ -6,18 +7,23 @@ app.get("/", (req, res) => {
   res.send(/* html */ `<h1>Hello!</h1>`);
 });
 
-// let HOST: string = "localhost"; // Type Widening >=
-// const HOST = "localhost" // literal type ==
-// const PORT = 3000;
+// http://127.0.0.1:9000/users?name=Alice
+// http://127.0.0.1:9000/users?color=red
 
-// owoce | nic -> owoce | jabłka -> owoce
+app.get("/users", (req, res) => {
+  const { name, color } = req.query;
 
-// string | undefined ->  string | "localhost" -> string
+  const data = users.filter((user) => {
+    // if(user.name.includes('..'))
+    // if(user.color === '')
+    return true;
+  });
+
+  res.send(data);
+});
 
 const HOST = process.env["HOST"] || "localhost";
 const PORT = parseInt(process.env["PORT"] || "3000");
-
-// const PORT = (process.env["PORT"] as unknown as number) || 3000;
 
 app.listen(PORT, HOST, (error) => {
   if (error) {
@@ -26,5 +32,3 @@ app.listen(PORT, HOST, (error) => {
     console.log(`Listening on http://${HOST}:${PORT}/`);
   }
 });
-
-// "localhost" extends string
