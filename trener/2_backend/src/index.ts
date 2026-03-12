@@ -13,21 +13,16 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   const { name, color } = req.query;
 
-  // /users - all users
-  // /users?name=a - only with name
-  // /users?name=a&color=red - name & color
+  // Function (Type) Guard
+  if (!!name && typeof name !== "string") return res.send({ message: "Error" });
+  if (!!color && typeof color !== "string") return res.send({ message: "Error" });
 
   const data = users.filter((user) => {
-    // let valid: boolean;
     let valid = true;
 
-    if (typeof name === "string") {
-      valid = user.name.toLowerCase().includes(name.toLowerCase());
-    }
+    if (name) valid = valid && user.name.toLowerCase().includes(name.toLowerCase());
 
-    if (typeof color === "string" && ["red", "green", "blue"].includes(color)) {
-      valid = user.color == color;
-    }
+    if (color) valid = valid && ["red", "green", "blue"].includes(user.color);
 
     return valid;
   });
