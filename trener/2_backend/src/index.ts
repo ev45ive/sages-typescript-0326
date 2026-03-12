@@ -7,8 +7,11 @@ app.get("/", (req, res) => {
 });
 
 // let HOST: string = "localhost"; // Type Widening >=
-const HOST = "localhost" // literal type == 
-const PORT = 3000;
+// const HOST = "localhost" // literal type == 
+// const PORT = 3000;
+
+const HOST = process.env['HOST'] // "localhost" // literal type == 
+const PORT = process.env['PORT'] // 3000;
 
 app.listen(PORT, HOST, (error) => {
   if (error) {
