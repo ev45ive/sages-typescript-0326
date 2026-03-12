@@ -1,17 +1,23 @@
-import express from 'express'
+import express from "express";
 
-const app = express(); 
+const app = express();
 
 app.get("/", (req, res) => {
   res.send(/* html */ `<h1>Hello!</h1>`);
 });
 
 // let HOST: string = "localhost"; // Type Widening >=
-// const HOST = "localhost" // literal type == 
+// const HOST = "localhost" // literal type ==
 // const PORT = 3000;
 
-const HOST = process.env['HOST'] // "localhost" // literal type == 
-const PORT = process.env['PORT'] // 3000;
+// owoce | nic -> owoce | jabłka -> owoce
+
+// string | undefined ->  string | "localhost" -> string
+
+const HOST = process.env["HOST"] || "localhost";
+const PORT = parseInt(process.env["PORT"] || "3000");
+
+// const PORT = (process.env["PORT"] as unknown as number) || 3000;
 
 app.listen(PORT, HOST, (error) => {
   if (error) {
@@ -20,7 +26,5 @@ app.listen(PORT, HOST, (error) => {
     console.log(`Listening on http://${HOST}:${PORT}/`);
   }
 });
-
-
 
 // "localhost" extends string
