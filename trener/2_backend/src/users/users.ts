@@ -15,10 +15,12 @@ export const users = [
     id: "345",
     name: "Kate",
     color: "green",
-    pet: { name: "Fish" },
+    // pet: { name: "Fish" },
   },
 ];
 
 // users[0].name
 const type = typeof users; // JS - "object"
 type Users = typeof users   // TS - { id: string; ...
+type User = Users[number]
+type Pet = User['pet'] // Type lookup
