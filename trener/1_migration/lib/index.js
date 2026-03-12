@@ -1,5 +1,7 @@
 /// <reference types="./globals.d.ts" />
 
+// @ts-check
+
 /**
  * Dodaje dodajną i dodajnik
  * @param {number} a Dodajna
@@ -10,7 +12,7 @@ export function add(a, b) {
   return a + b;
 }
 
-add(1, "2");
+// add(1, "2"); // ERRor!
 
 /** @type {Person}*/
 const person = {
