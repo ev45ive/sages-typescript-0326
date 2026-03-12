@@ -43,7 +43,7 @@ You can learn more at https://aka.ms/tsconfig
 # Polyfills - core.js
 
 ```ts
-import 'core-js/actual/promise';
+import 'core-js/actual/promise';  // --lib 'es5,es2015.promise'
 import 'core-js/actual/set';
 import 'core-js/actual/iterator';
 import 'core-js/actual/array/from';
