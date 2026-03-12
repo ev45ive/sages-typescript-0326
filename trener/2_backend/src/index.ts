@@ -1,5 +1,5 @@
 import express from "express";
-import { users } from "./users/users";
+import { USER_COLORS, users } from "./users/users";
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.get("/users", (req, res) => {
 
     if (name) valid = valid && user.name.toLowerCase().includes(name.toLowerCase());
 
-    if (color) valid = valid && ["red", "green", "blue"].includes(user.color);
+    if (color) valid = valid && USER_COLORS.includes(user.color);
 
     return valid;
   });

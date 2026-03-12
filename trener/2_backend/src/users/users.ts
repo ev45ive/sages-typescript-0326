@@ -23,10 +23,12 @@ export const users: User[] = [
   {
     id: "345",
     name: "Kate",
-    color: "green",
+    color: "pink",
     // pet: { name: "Fish" },
   },
 ];
+
+export const USER_COLORS = ["red", "green", "blue"]
 
 // users[0].name
 // const type = typeof users; // JS - "object"
