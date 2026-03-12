@@ -1,4 +1,15 @@
-import { add, getPersonInfo, placki } from "./lib/index.js";
+/// <reference types="./index.d.ts" />
+
+import { add, getPersonInfo } from "./lib/index.js";
+
+import { placki, createElement } from "react";
+import jQuery from "jquery";
+
+
+jQuery.placki() // Error - missing placki-plugin.JS
+jQuery.ciastka
+
+$()
 
 add(1, 2); // from index.d.ts declarations
 
@@ -22,8 +33,8 @@ export class NaszaKlasa {
   };
 }
 
-throw new Error('Ups...')
+throw new Error("Ups...");
 
 window.document.body;
-[].find(() => false)
-new Set().intersection(new Set())
+[].find(() => false);
+new Set().intersection(new Set());
