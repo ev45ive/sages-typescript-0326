@@ -11,10 +11,15 @@ enum Switch {
   BANAN = 1,
   GRUSZKA = 2,
 }
-const owoc = Switch.BANAN & Switch.GRUSZKA
+const owoc = Switch.BANAN & Switch.GRUSZKA;
 
-export const USER_COLORS = ["red", "green", "blue"] as const;
-export type USER_COLORS = "red" | "green" | "blue";
+// export const USER_COLORS = ["red", "green", "blue"] as const;
+
+// export type USER_COLORS = "red" | "green" | "blue";
+// export const USER_COLORS: USER_COLORS[] = ["red", "green", "red"]
+
+export const USER_COLORS = ["red", "green", "pink", 'blue'] as const;
+export type USER_COLORS = (typeof USER_COLORS)[number];
 
 // USER_COLORS.push('123') error!
 
