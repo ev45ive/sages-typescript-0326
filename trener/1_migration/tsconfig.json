@@ -9,7 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
+    "types": ["./src/lib/globals.d.ts"],
+    // "typeRoots": ["node_modules/@types"],
     "lib": ["dom", "esnext"], // +Polyfills
     // For nodejs:
     // "lib": ["esnext"],
