@@ -1,6 +1,6 @@
-import { add, getPersonInfo } from "./lib/index.js";
+import { add, getPersonInfo, placki } from "./lib/index.js";
 
-add(1, 2);
+add(1, 2); // from index.d.ts declarations
 
 // getPersonInfo({}) // err
 

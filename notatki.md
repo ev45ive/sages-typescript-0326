@@ -51,3 +51,9 @@ throw new Error('Ups...')
 
 Error: Ups...
     at Object.<anonymous> (C:\Projects\sages-typescript-0326\trener\1_migration\src\index.ts:25:7)
+
+# Ambient declaration 
+
+tsc -d   --emitDeclarationOnly --allowJs  src/lib/index.js
+
+From outside index.d.ts defined types for index.js 
