@@ -1,15 +1,17 @@
-import { add, getPersonInfo } from "./lib";
+import { add, getPersonInfo } from "./lib/index.js";
 
 add(1, 2);
 
 // getPersonInfo({}) // err
+
+const x = 1 ** 2;
 
 export const showItem = (item: { name: string }) => `${item.name}`;
 
 export class NaszaKlasa {
   static readonly szkola = "Nasza szkola";
 
-//   readonly #tajne = "sekret";
+  //   readonly #tajne = "sekret";
 
   constructor(readonly która = "1A") {
     this.która;
@@ -19,3 +21,7 @@ export class NaszaKlasa {
     console.log(`Dodaje ucznia ${imie}`);
   };
 }
+
+window.document.body;
+[].find(() => false)
+new Set().intersection(new Set())
