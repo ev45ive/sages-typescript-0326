@@ -8,3 +8,9 @@ export type Person = {
     name: string;
   };
 };
+
+// document.body // Statements are not allowed in ambient contexts.
+
+// const x = 1;
+
+declare const x = 1;
