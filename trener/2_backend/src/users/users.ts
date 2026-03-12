@@ -1,4 +1,11 @@
-export const users = [
+export const users: {
+  id: string;
+  name: string;
+  color: string;
+  pet?: {
+    name: string;
+  };
+}[] = [
   {
     id: "123",
     name: "Alice",
@@ -20,7 +27,7 @@ export const users = [
 ];
 
 // users[0].name
-const type = typeof users; // JS - "object"
-type Users = typeof users   // TS - { id: string; ...
-type User = Users[number]
-type Pet = User['pet'] // Type lookup
+// const type = typeof users; // JS - "object"
+// type Users = typeof users   // TS - { id: string; ...
+// type User = Users[number]
+// type Pet = User['pet'] // Type lookup
