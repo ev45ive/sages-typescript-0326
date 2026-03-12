@@ -1,7 +1,5 @@
-function add(a:string, b:string) {
-  return a + b;
-}
+import { add } from "./lib";
 
 add(1, 2);
-add('1', 2);
-add('1', []);
+// add('1', 2); // err
+// add('1', []); // erro
