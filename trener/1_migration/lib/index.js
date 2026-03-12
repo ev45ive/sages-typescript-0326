@@ -18,20 +18,22 @@ const person = {
   },
 };
 
-/**
- * @typedef Person  
- * nice person 
- * @property {string} name
- * @property {{
- *  name:string
- * }} company
- */
+/** @typedef {import('./person.d.ts').Person} Person */
+
+// /**
+//  * @typedef Person
+//  * nice person
+//  * @property {string} name
+//  * @property {{
+//  *  name:string
+//  * }} company
+//  */
 
 /**
  * Shows person info
- * @param {Person} person 
- * @returns 
+ * @param {Person} person
+ * @returns
  */
-export function getPersonInfo(person){
-  return `${person.name} - ${person.company.name}`
+export function getPersonInfo(person) {
+  return `${person.name} - ${person.company.name}`;
 }
