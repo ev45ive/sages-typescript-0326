@@ -7,8 +7,14 @@ export interface User {
   };
 }
 
+enum Switch {
+  BANAN = 1,
+  GRUSZKA = 2,
+}
+const owoc = Switch.BANAN & Switch.GRUSZKA
+
 export const USER_COLORS = ["red", "green", "blue"] as const;
-export type  USER_COLORS = "red" | "green" | "blue";
+export type USER_COLORS = "red" | "green" | "blue";
 
 // USER_COLORS.push('123') error!
 
@@ -16,7 +22,8 @@ export const users: User[] = [
   {
     id: "123",
     name: "Alice",
-    color: USER_COLORS[0],
+    // colors: USER_COLORS.RED
+    color: "green",
     pet: { name: "Cat" },
   },
   {
