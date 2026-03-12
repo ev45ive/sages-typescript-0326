@@ -10,6 +10,8 @@ git -v
 git version 2.40.1.windows.1
 
 
+# GIT
+https://github.com/ev45ive/sages-typescript-0326.git 
 
 # TSC - TypeScript 
 npm i -g typescript@latest
@@ -99,3 +101,20 @@ npm ci -> package-lock.json - strict  - ("integrity": "sha512..")
 
 npm i --production
 npm warn config production Use `--omit=dev` instead.
+
+
+# TS project - NodeJS
+
+npm init -y
+echo "node_modules/" >> .gitignore
+
+tsc --init --outDir "./dist" --target esnext --lib esnext ./src/index.ts --types node
+
+echo "/dist" >> .gitignore 
+
+npm i -D @types/node
+
+tsc --watch
+
+node --watch --enable-source-maps ./dist/index.js 
+
