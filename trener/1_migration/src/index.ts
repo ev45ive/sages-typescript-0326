@@ -22,6 +22,8 @@ export class NaszaKlasa {
   };
 }
 
+throw new Error('Ups...')
+
 window.document.body;
 [].find(() => false)
 new Set().intersection(new Set())
