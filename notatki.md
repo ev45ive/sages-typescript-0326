@@ -33,9 +33,25 @@ tsc --init
 
 tsc ./src/index.ts --target es2022 --strict --allowJs --outDir "./dist" --rootDir ./src --lib dom,esnext --init
 
+--target - what to transpile to... (syntax)
+--lib - what should be already there.. (api)
+
 Created a new tsconfig.json                                                                                             
 You can learn more at https://aka.ms/tsconfig
 
+
+# Polyfills - core.js
+
+```ts
+import 'core-js/actual/promise';
+import 'core-js/actual/set';
+import 'core-js/actual/iterator';
+import 'core-js/actual/array/from';
+import 'core-js/actual/array/flat-map';
+import 'core-js/actual/structured-clone';
+
+if(!window.Promise) { window.Promise = () => ... }
+```
 
 # SourceMaps
 
