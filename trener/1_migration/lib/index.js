@@ -18,7 +18,13 @@ const person = {
   },
 };
 
+/** @type {Collection<Person>} */
+const people = { items: [] };
+
 /** @typedef {import('./person.d.ts').Person} Person */
+/**
+ * @template T
+ * @typedef {import('./person.d.ts').Collection<T>} Collection<T> */
 
 // /**
 //  * @typedef Person

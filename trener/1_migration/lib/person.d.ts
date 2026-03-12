@@ -9,6 +9,9 @@ export type Person = {
   };
 };
 
+export type Collection<T> = { items: T[] }
+
+
 // document.body // Statements are not allowed in ambient contexts.
 
 // const x = 1;
