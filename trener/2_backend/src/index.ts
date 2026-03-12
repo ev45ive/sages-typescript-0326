@@ -14,9 +14,12 @@ app.get("/users", (req, res) => {
   const { name, color } = req.query;
 
   const data = users.filter((user) => {
-    // if(user.name.includes('..'))
-    // if(user.color === '')
-    return true;
+    if (typeof name === "string" && name.trim() !== "") {
+      if (user.name.toLowerCase().includes(name.toLowerCase())) return true;
+    } else {
+      name;
+      return false;
+    }
   });
 
   res.send(data);
