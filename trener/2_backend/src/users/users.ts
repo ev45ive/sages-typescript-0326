@@ -1,17 +1,22 @@
 export interface User {
   id: string;
   name: string;
-  color: string;
+  color: USER_COLORS;
   pet?: {
     name: string;
   };
 }
 
+export const USER_COLORS = ["red", "green", "blue"] as const;
+export type  USER_COLORS = "red" | "green" | "blue";
+
+// USER_COLORS.push('123') error!
+
 export const users: User[] = [
   {
     id: "123",
     name: "Alice",
-    color: "red",
+    color: USER_COLORS[0],
     pet: { name: "Cat" },
   },
   {
@@ -27,14 +32,6 @@ export const users: User[] = [
     // pet: { name: "Fish" },
   },
 ];
-
-export const USER_COLORS = ["red", "green", "blue"]
-
-// users[0].name
-// const type = typeof users; // JS - "object"
-// type Users = typeof users   // TS - { id: string; ...
-// type User = Users[number]
-// type Pet = User['pet'] // Type lookup
 
 export function getUserInfo(user: User) {}
 export function getUserPet(user: { pet: User["pet"] }) {
