@@ -22,3 +22,9 @@ where tsc
 C:\Program Files\nodejs\tsc
 
 echo $PATH
+
+
+
+# Migracja JS -> TS 
+https://jsdoc.app/
+https://tsdoc.org/
