@@ -1,6 +1,3 @@
-// console.log("Hello NodeJs!");
-// console.log(process.argv.slice(2));
-// console.log(process.env['PORT']);
 import express from 'express'
 
 const app = express(); 
@@ -9,7 +6,8 @@ app.get("/", (req, res) => {
   res.send(/* html */ `<h1>Hello!</h1>`);
 });
 
-const HOST = "localhost";
+// let HOST: string = "localhost"; // Type Widening >=
+const HOST = "localhost" // literal type == 
 const PORT = 3000;
 
 app.listen(PORT, HOST, (error) => {
@@ -19,3 +17,7 @@ app.listen(PORT, HOST, (error) => {
     console.log(`Listening on http://${HOST}:${PORT}/`);
   }
 });
+
+
+
+// "localhost" extends string
