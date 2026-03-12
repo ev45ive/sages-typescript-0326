@@ -23,6 +23,10 @@ export type USER_COLORS = (typeof USER_COLORS)[number];
 
 // USER_COLORS.push('123') error!
 
+export function isValidColor(color:string){
+  return USER_COLORS.includes(color)
+}
+
 export const users: User[] = [
   {
     id: "123",
