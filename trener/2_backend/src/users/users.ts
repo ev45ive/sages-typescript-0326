@@ -18,3 +18,7 @@ export const users = [
     pet: { name: "Fish" },
   },
 ];
+
+// users[0].name
+const type = typeof users; // JS - "object"
+type Users = typeof users   // TS - { id: string; ...
