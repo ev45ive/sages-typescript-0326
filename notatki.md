@@ -73,3 +73,29 @@ Error: Ups...
 tsc -d   --emitDeclarationOnly --allowJs  src/lib/index.js
 
 From outside index.d.ts defined types for index.js 
+
+
+# jQuery? 
+https://vanilla.js.org/#from-jquery-to-vanilla-js
+
+
+# Semver
+https://semver.org/
+https://semver.npmjs.com/
+
+
+# NPM 
+npm outdated
+Package  Current  Wanted  Latest  Location  Depended by
+jquery   MISSING   4.0.0   4.0.0  -         1_migration
+react    MISSING  19.2.4  19.2.4  -         1_migration
+
+npm i 
+npm outdated
+-
+
+npm i  -> package.json +  update (semver)
+npm ci -> package-lock.json - strict  - ("integrity": "sha512..")
+
+npm i --production
+npm warn config production Use `--omit=dev` instead.
