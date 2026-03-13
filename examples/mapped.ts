@@ -20,8 +20,17 @@ const teams = [
     name: 'Blues',
     color: 'blue',
   },
-]
+] as const
+
+type Teams = typeof teams
+type TeamsColors = Teams[number]['color']
 
 type TeamPlayers = {
-  [???] : {players: []}
+  [color in TeamsColors]?: { color: color; players: [] }
+}
+const players: TeamPlayers = {
+  blue: {
+    color: 'blue',
+    players: [],
+  },
 }
