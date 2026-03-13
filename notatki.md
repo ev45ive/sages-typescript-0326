@@ -138,3 +138,7 @@ Listening on http://localhost:3000/
 # TS Toolbelt
 
 https://github.com/millsp/ts-toolbelt?tab=readme-ov-file#utility-index
+
+# ankieta post:
+
+TYPESCRIPT open 12-13.03.2026 kulesza https://sages.link/228981 https://sages.link/228981/qrcode
