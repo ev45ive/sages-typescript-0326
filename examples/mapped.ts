@@ -8,3 +8,20 @@ type TeamColors = 'red' | 'blue'
 type Scores = {
   [color in TeamColors]: { color: color; score: number }
 }
+
+// ---
+
+const teams = [
+  {
+    name: 'Reds',
+    color: 'red',
+  },
+  {
+    name: 'Blues',
+    color: 'blue',
+  },
+]
+
+type TeamPlayers = {
+  [???] : {players: []}
+}
