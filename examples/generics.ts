@@ -45,3 +45,11 @@ const r4 = takeFirst(['asd', 123]) // <string | number>
 const r5: boolean = takeFirst([true])!
 
 // ---
+
+const admin = { name: 'admin' }
+const person = { name: 'person', age: 23 }
+const bot = { name: 'Chatb0t', model: 'gpt99' }
+
+function getUserName(user) {
+  return user.name
+}
