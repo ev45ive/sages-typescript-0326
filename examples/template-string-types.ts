@@ -50,3 +50,22 @@ const req: RequestConfig = {
     banana: 'OK',
   },
 }
+
+// --------------
+
+type domain = 'placki.pl' | 'banana.com'
+type schema = 'http' | 'https'
+type resource = 'users' | 'posts'
+
+type URLs = `${schema}://${domain}/${resource}${'/' | ''}${string}`
+
+function makeRequest(url: `${schema}://${domain}/`): string
+function makeRequest(url: `${schema}://${domain}/${string & {}}`): string
+function makeRequest(url: `${schema}://${domain}/${string & {}}`, config: {}): string
+function makeRequest(url: string, config?: {}): string {
+  if (config) {
+  }
+  return url
+}
+
+makeRequest('http://placki.pl/')
