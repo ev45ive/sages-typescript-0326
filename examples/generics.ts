@@ -26,3 +26,7 @@ declare function serializeJSON<T>(obj: T): string
 /*            */ JSON.stringify('') // string
 
 //
+
+function identity<T>(id: T): T {
+  return id
+}
