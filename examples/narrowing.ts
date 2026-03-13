@@ -1,3 +1,4 @@
+
 function normalizeID(id: number | string) {
   if (typeof id === "number") {
     return id.toFixed(); // string
@@ -18,4 +19,14 @@ function normalizeID(id: number | string) {
 
 function ExhaustivenessCheck(id: never): never {
   throw new Error("Invalid id"); // JS
+}
+
+function neverEndingStory() : never {
+  while (true) {
+    // break;
+    // return 1
+    throw "";
+  }
+
+  //   return undefined // Unreachable code detected.
 }
