@@ -11,10 +11,11 @@ function normalizeID(id: number | string) {
     return id; // never
   }
 
-  // Exhaustiveness check
-  //   const never: never = id;
-  id satisfies never;
-  throw new Error("Invalid id");
+  ExhaustivenessCheck(id);
 
-  // return undefined
+  //   return undefined; // Unreachable code detected.
+}
+
+function ExhaustivenessCheck(id: never): never {
+  throw new Error("Invalid id"); // JS
 }
