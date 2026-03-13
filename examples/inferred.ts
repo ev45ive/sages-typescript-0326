@@ -20,3 +20,18 @@ type ReturnType<T> = T extends (...params: any) => infer ReturnT ? ReturnT : nev
 
 type res = Parameters<PositionCallback>[0]
 type coords = res['coords']
+
+// ---
+
+// Exercise: Extracting return values ( of return values )
+function fetchPlacki(type: string) {
+  return window
+    .fetch('http://fabrykaplackow.com/', {})
+    .then((r) => r.json())
+    .then((d) => ({ placek: d, sos: d.sos }))
+}
+// fetchPlacki().then(value => {})
+
+type PromiseR = ReturnType<typeof fetchPlacki>
+type R = PromiseR extends Promise<infer V> ? V : never
+type R2 = Awaited<PromiseR>
