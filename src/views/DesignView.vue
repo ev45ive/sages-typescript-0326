@@ -2,7 +2,7 @@
   <div class="text-2xl">Design View</div>
 
   <div class="grid gap-5 justify-center">
-    <AppButton variant="danger">Submit</AppButton>
+    <AppButton size="lg" variant="danger">Submit</AppButton>
     <AppButton variant="ghost">Cancel</AppButton>
     <AppButton>Info</AppButton>
   </div>
