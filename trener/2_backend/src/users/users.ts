@@ -8,7 +8,9 @@ export interface User {
 }
 
 export function getUserById(id: User["id"]): User {
-  throw "Method not implemented";
+  const user = users.find((u) => u.id === id);
+  if (!user) throw new Error("User not found");
+  return user;
 }
 
 export const USER_COLORS = ["red", "green", "pink", "blue"] as const;

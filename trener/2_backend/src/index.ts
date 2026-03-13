@@ -10,13 +10,16 @@ app.get("/", (req, res) => {
 // http://127.0.0.1:9000/users?name=Alice
 // http://127.0.0.1:9000/users?color=red
 
-app.get('/users/:userId',(req,res)=>{
-  const id = req.params['userId']
+app.get("/users/:userId", (req, res) => {
+  const id = req.params["userId"];
 
-  const user = getUserById(id)
-
-  res.send(user)
-})
+  try {
+    const user = getUserById(id);
+    res.send(user);
+  } catch (e) {
+    res.status(404).send({ message: "User not found" });
+  }
+});
 
 app.get("/users", (req, res) => {
   const { name, color } = req.query;
