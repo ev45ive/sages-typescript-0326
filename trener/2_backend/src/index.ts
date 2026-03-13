@@ -1,5 +1,5 @@
 import express from "express";
-import { USER_COLORS, users } from "./users/users";
+import { isValidColor, USER_COLORS, users } from "./users/users";
 
 const app = express();
 
@@ -15,14 +15,16 @@ app.get("/users", (req, res) => {
 
   // Function (Type) Guard
   if (!!name && typeof name !== "string") return res.send({ message: "Error" });
-  if (!!color && typeof color !== "string") return res.send({ message: "Error" });
+  if (!(color && isValidColor(color))) return res.send({ message: "Error" });
 
   const data = users.filter((user) => {
     let valid = true;
 
-    if (name) valid = valid && user.name.toLowerCase().includes(name.toLowerCase());
+    if (name)
+      valid = valid && user.name.toLowerCase().includes(name.toLowerCase());
 
-    if (color) valid = valid && USER_COLORS.includes(user.color);
+    // if (color as USER_COLORS) valid = valid && USER_COLORS.includes(color as USER_COLORS);
+    if (color) valid = valid && USER_COLORS.includes(color);
 
     return valid;
   });

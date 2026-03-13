@@ -18,13 +18,14 @@ const owoc = Switch.BANAN & Switch.GRUSZKA;
 // export type USER_COLORS = "red" | "green" | "blue";
 // export const USER_COLORS: USER_COLORS[] = ["red", "green", "red"]
 
-export const USER_COLORS = ["red", "green", "pink", 'blue'] as const;
+export const USER_COLORS = ["red", "green", "pink", "blue"] as const;
 export type USER_COLORS = (typeof USER_COLORS)[number];
 
 // USER_COLORS.push('123') error!
 
-export function isValidColor(color:string){
-  return USER_COLORS.includes(color)
+// Type Guard Function: color is USER_COLORS 
+export function isValidColor(color: unknown): color is USER_COLORS {
+  return USER_COLORS.includes(color as USER_COLORS);
 }
 
 export const users: User[] = [
