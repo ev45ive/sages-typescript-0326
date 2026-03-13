@@ -1,11 +1,11 @@
 import express from "express";
 import {
   getUserById,
-  HttpError,
   isValidColor,
   USER_COLORS,
   users,
 } from "./users/users";
+import { HttpError } from "./users/HttpError";
 
 const app = express();
 
