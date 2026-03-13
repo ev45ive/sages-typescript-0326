@@ -118,3 +118,15 @@ tsc --watch
 
 node --watch --enable-source-maps ./dist/index.js 
 
+
+# NPX / TSX
+npx -y tsx ./src/index.ts 
+Listening on http://localhost:3000/
+
+$ npm i -g tsx
+$ tsx ./src/index.ts
+
+$ tsx --watch ./src/index.ts
+
+Restarting './src/index.ts'
+Listening on http://localhost:3000/
