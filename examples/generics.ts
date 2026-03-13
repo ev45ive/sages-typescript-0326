@@ -80,3 +80,33 @@ function getProperty<T extends object>(obj: T, key: keyof T) {
   return obj[key]
 }
 getProperty(bot, 'model')
+
+// ---
+
+type Album = {
+  album_type: string
+  total_tracks: number
+  available_markets: string[]
+  external_urls: {
+    spotify: string
+  }
+  href: string
+  id: string
+  images: {
+    url: string
+    height: number
+    width: number
+  }[]
+  name: string
+  release_date: string
+  release_date_precision: string
+  restrictions: {}
+  type: string
+}
+
+type Partial<T> = {
+  [k in keyof T]?: T[k]
+}
+
+// type Pick<T, K extends keyof T> = { [k in K]: T[k] }
+type A = Pick<Album, 'images' | 'name'>

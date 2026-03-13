@@ -37,6 +37,14 @@ const config = {
   },
 } as const
 
+type Config<V extends string> = {
+  base: string
+  variants: { [name in V]: { [variant: string]: string } }
+  defaultVariants: { [name in V]: string }
+}
+
+// type Variants<C extends Config> = {}
+
 type Props = {
   as?: string
   variant?: keyof (typeof config)['variants']['variant']
