@@ -50,6 +50,13 @@ const admin = { name: 'admin' }
 const person = { name: 'person', age: 23 }
 const bot = { name: 'Chatb0t', model: 'gpt99' }
 
-function getUserName(user) {
+// T ⊆ { name: unknown }
+function getUserName<T extends { name: unknown }>(user: T): T['name'] {
   return user.name
+}
+
+// function getUserName2<T>({ name }: { name: T }) {
+
+function getUserName2({ name }: { name: string }) {
+  return name
 }
