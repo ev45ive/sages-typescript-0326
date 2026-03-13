@@ -67,3 +67,9 @@ function printUserNameAndReturn<T extends { name: string }>(user: T) {
 
   return user
 }
+
+// ----
+
+function mergeObjects<X, Y>(a: X, b: Y): X & Y {
+  return { ...a, ...b }
+}
