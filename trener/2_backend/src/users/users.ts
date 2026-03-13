@@ -30,12 +30,28 @@ export function isValidColor(color: unknown): color is USER_COLORS {
 
 // fetch('api.com/api/users') as User
 
+import { z } from "zod";
+
+const UserSchema = z.object({
+  id: z.string(),
+  name: z.string().min(3, "Minimum length 3"),
+  color: z.literal(USER_COLORS),
+  pet: z.object({ name: z.string() }).optional(),
+}).readonly();
+
+type ZodUser = z.infer<typeof UserSchema>;
+
+function parseUser(user: unknown) {
+  return UserSchema.parse(user); // type == User!
+}
+
 export function isValidUser(user: unknown): user is User {
-  if (!user || typeof user != "object") return false;
-  if (!("id" in user) || typeof user.id !== "string") return false;
-  if (!("name" in user) || typeof user.name !== "string") return false;
-  if (!("color" in user) || !isValidColor(user.color)) return false;
-  return true;
+  // if (!user || typeof user != "object") return false;
+  // if (!("id" in user) || typeof user.id !== "string") return false;
+  // if (!("name" in user) || typeof user.name !== "string") return false;
+  // if (!("color" in user) || !isValidColor(user.color)) return false;
+  // return true;
+  return UserSchema.safeParse(user).success;
 }
 
 export const users: User[] = [
