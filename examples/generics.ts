@@ -30,3 +30,18 @@ declare function serializeJSON<T>(obj: T): string
 function identity<T>(id: T): T {
   return id
 }
+
+// ---
+
+function takeFirst<T>(arr: T[]): T | undefined {
+  return arr[0]
+}
+
+const r1 = takeFirst<string>(['123'])
+const r2 = takeFirst([]) // <never>
+const r3 = takeFirst(['asd']) // <string >
+const r4 = takeFirst(['asd', 123]) // <string | number>
+
+const r5: boolean = takeFirst([true])!
+
+// ---
