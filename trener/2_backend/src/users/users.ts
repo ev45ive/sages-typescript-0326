@@ -9,8 +9,35 @@ export interface User {
 
 export function getUserById(id: User["id"]): User {
   const user = users.find((u) => u.id === id);
-  if (!user) throw new Error("User not found");
+  if (!user) throw new NotFound("User not found");
   return user;
+}
+
+export class HttpError extends Error {
+  message = "Server Error";
+  status = 500;
+
+  constructor(message?: string, options?: ErrorOptions) {
+    super(message, options);
+  }
+
+  toJSON() {
+    return { message: this.message, status: this.status };
+  }
+
+  static is(e: unknown): e is HttpError {
+    return e instanceof HttpError;
+  }
+}
+
+export class NotFound extends HttpError {
+  message = "Not Found";
+  status = 404;
+}
+
+export class InvalidRequest extends HttpError {
+  message = "Invalid Request";
+  status = 400;
 }
 
 export const USER_COLORS = ["red", "green", "pink", "blue"] as const;

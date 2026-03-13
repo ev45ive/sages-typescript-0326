@@ -1,5 +1,11 @@
 import express from "express";
-import { getUserById, isValidColor, USER_COLORS, users } from "./users/users";
+import {
+  getUserById,
+  HttpError,
+  isValidColor,
+  USER_COLORS,
+  users,
+} from "./users/users";
 
 const app = express();
 
@@ -17,7 +23,8 @@ app.get("/users/:userId", (req, res) => {
     const user = getUserById(id);
     res.send(user);
   } catch (e) {
-    res.status(404).send({ message: "User not found" });
+    if (HttpError.is(e)) return res.status(e.status).send(e);
+    if (e instanceof Error) return res.status(500).send({ message: e.message });
   }
 });
 
