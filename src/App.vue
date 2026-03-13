@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div class="wrapper container mx-auto py-2">
+    <HelloWorld :msg="''" />
     <header>
       <nav>
         <h1 class="text-3xl font-bold underline">Test</h1>

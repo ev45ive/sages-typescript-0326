@@ -1,15 +1,15 @@
 <template>
   <div class="text-2xl">Design View</div>
 
-  <div class="grid gap-5">
-    <AppButton variant="test" class="bg-green-400 text-white"> Submit </AppButton>
-    <AppButton class="bg-red-400 text-white">Cancel</AppButton>
-    <AppButton class="bg-blue-400 text-white">Info</AppButton>
+  <div class="grid gap-5 justify-center">
+    <AppButton variant="danger">Submit</AppButton>
+    <AppButton variant="ghost">Cancel</AppButton>
+    <AppButton>Info</AppButton>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { default as AppButton } from '../components/AppButton.vue'
+<script setup lang="ts">
+import AppButton from '../components/AppButton.vue'
 </script>
 
 <style scoped></style>
