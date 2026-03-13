@@ -9,28 +9,31 @@ npm -v
 git -v
 git version 2.40.1.windows.1
 
-
 # GIT
-https://github.com/ev45ive/sages-typescript-0326.git 
 
-# TSC - TypeScript 
+https://github.com/ev45ive/sages-typescript-0326.git
+
+# TSC - TypeScript
+
 npm i -g typescript@latest
 
 tsc -v
 Version 5.9.3
 
 # NPM Path
+
 where tsc
 C:\Program Files\nodejs\tsc
 
 echo $PATH
 
+# Migracja JS -> TS
 
-# Migracja JS -> TS 
 https://jsdoc.app/
 https://tsdoc.org/
 
 # TS Config
+
 tsc --init
 
 tsc ./src/index.ts --target es2022 --strict --allowJs --outDir "./dist" --rootDir ./src --lib dom,esnext --init
@@ -38,9 +41,8 @@ tsc ./src/index.ts --target es2022 --strict --allowJs --outDir "./dist" --rootDi
 --target - what to transpile to... (syntax)
 --lib - what should be already there.. (api)
 
-Created a new tsconfig.json                                                                                             
+Created a new tsconfig.json  
 You can learn more at https://aka.ms/tsconfig
-
 
 # Polyfills - core.js
 
@@ -60,48 +62,48 @@ if(!window.Promise) { window.Promise = () => ... }
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
- 
-node  --enable-source-maps ./dist/
+
+node --enable-source-maps ./dist/
 
 C:\Projects\sages-typescript-0326\trener\1_migration\src\index.ts:25
 throw new Error('Ups...')
 ^
 
 Error: Ups...
-    at Object.<anonymous> (C:\Projects\sages-typescript-0326\trener\1_migration\src\index.ts:25:7)
+at Object.<anonymous> (C:\Projects\sages-typescript-0326\trener\1_migration\src\index.ts:25:7)
 
-# Ambient declaration 
+# Ambient declaration
 
-tsc -d   --emitDeclarationOnly --allowJs  src/lib/index.js
+tsc -d --emitDeclarationOnly --allowJs src/lib/index.js
 
-From outside index.d.ts defined types for index.js 
+From outside index.d.ts defined types for index.js
 
+# jQuery?
 
-# jQuery? 
 https://vanilla.js.org/#from-jquery-to-vanilla-js
 
-
 # Semver
+
 https://semver.org/
 https://semver.npmjs.com/
 
+# NPM
 
-# NPM 
 npm outdated
-Package  Current  Wanted  Latest  Location  Depended by
-jquery   MISSING   4.0.0   4.0.0  -         1_migration
-react    MISSING  19.2.4  19.2.4  -         1_migration
+Package Current Wanted Latest Location Depended by
+jquery MISSING 4.0.0 4.0.0 - 1_migration
+react MISSING 19.2.4 19.2.4 - 1_migration
 
-npm i 
+npm i
 npm outdated
+
 -
 
-npm i  -> package.json +  update (semver)
-npm ci -> package-lock.json - strict  - ("integrity": "sha512..")
+npm i -> package.json + update (semver)
+npm ci -> package-lock.json - strict - ("integrity": "sha512..")
 
 npm i --production
 npm warn config production Use `--omit=dev` instead.
-
 
 # TS project - NodeJS
 
@@ -110,17 +112,18 @@ echo "node_modules/" >> .gitignore
 
 tsc --init --outDir "./dist" --target esnext --lib esnext ./src/index.ts --types node
 
-echo "/dist" >> .gitignore 
+echo "/dist" >> .gitignore
 
 npm i -D @types/node
 
 tsc --watch
 
-node --watch --enable-source-maps ./dist/index.js 
-
+node --watch --enable-source-maps ./dist/index.js
 
 # NPX / TSX
-npx -y tsx ./src/index.ts 
+
+```
+npx -y tsx ./src/index.ts
 Listening on http://localhost:3000/
 
 $ npm i -g tsx
@@ -130,3 +133,8 @@ $ tsx --watch ./src/index.ts
 
 Restarting './src/index.ts'
 Listening on http://localhost:3000/
+```
+
+# TS Toolbelt
+
+https://github.com/millsp/ts-toolbelt?tab=readme-ov-file#utility-index
