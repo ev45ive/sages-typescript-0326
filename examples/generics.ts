@@ -73,3 +73,10 @@ function printUserNameAndReturn<T extends { name: string }>(user: T) {
 function mergeObjects<X, Y>(a: X, b: Y): X & Y {
   return { ...a, ...b }
 }
+
+// ---
+
+function getProperty<T extends object>(obj: T, key: keyof T) {
+  return obj[key]
+}
+getProperty(bot, 'model')
