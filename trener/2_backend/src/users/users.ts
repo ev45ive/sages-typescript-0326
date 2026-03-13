@@ -23,9 +23,19 @@ export type USER_COLORS = (typeof USER_COLORS)[number];
 
 // USER_COLORS.push('123') error!
 
-// Type Guard Function: color is USER_COLORS 
+// Type Guard Function: color is USER_COLORS
 export function isValidColor(color: unknown): color is USER_COLORS {
   return USER_COLORS.includes(color as USER_COLORS);
+}
+
+// fetch('api.com/api/users') as User
+
+export function isValidUser(user: unknown): user is User {
+  if (!user || typeof user != "object") return false;
+  if (!("id" in user) || typeof user.id !== "string") return false;
+  if (!("name" in user) || typeof user.name !== "string") return false;
+  if (!("color" in user) || !isValidColor(user.color)) return false;
+  return true;
 }
 
 export const users: User[] = [
@@ -57,7 +67,7 @@ export function getUserPet(user: { pet: User["pet"] }) {
 }
 
 // Freshness
-getUserInfo({ id: "123", name: "123", color: "123" /* , colour: 123 */ });
+getUserInfo({ id: "123", name: "123", color: "blue" /* , colour: 123 */ });
 
 // const u2: User = { id: "123", name: "123", color: "123", colour:123}
 
@@ -66,7 +76,7 @@ const u3 = {
   // IUserMeta
   id: "123",
   name: "123",
-  color: "123",
+  color: "red",
 
   // IUserPet
   pet: { name: "123" },
