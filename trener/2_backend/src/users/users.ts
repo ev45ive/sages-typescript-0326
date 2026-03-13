@@ -92,7 +92,7 @@ const u3 = {
   // IUserMeta
   id: "123",
   name: "123",
-  color: "red",
+  color: "red" as USER_COLORS,
 
   // IUserPet
   pet: { name: "123" },
