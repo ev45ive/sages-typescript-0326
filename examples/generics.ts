@@ -60,3 +60,10 @@ function getUserName<T extends { name: unknown }>(user: T): T['name'] {
 function getUserName2({ name }: { name: string }) {
   return name
 }
+
+// Generic Constraints
+function printUserNameAndReturn<T extends { name: string }>(user: T) {
+  console.log(`Hello ${user.name}`)
+
+  return user
+}
