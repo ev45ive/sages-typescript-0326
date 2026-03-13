@@ -1,5 +1,5 @@
 import express from "express";
-import { isValidColor, USER_COLORS, users } from "./users/users";
+import { getUserById, isValidColor, USER_COLORS, users } from "./users/users";
 
 const app = express();
 
@@ -9,6 +9,14 @@ app.get("/", (req, res) => {
 
 // http://127.0.0.1:9000/users?name=Alice
 // http://127.0.0.1:9000/users?color=red
+
+app.get('/users/:userId',(req,res)=>{
+  const id = req.params['userId']
+
+  const user = getUserById(id)
+
+  res.send(user)
+})
 
 app.get("/users", (req, res) => {
   const { name, color } = req.query;
